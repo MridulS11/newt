@@ -201,8 +201,11 @@ a {
     clip-path: inset(0.03rem 1.1rem round 40px);
 }
 
+.phone3 {
+    margin-left: 40vh;
+}
 
-    /* Mobile Optimization */
+/* Mobile Optimization */
 @media (max-width: 768px) {
     .phone {
         clip-path: inset(0.02rem 0.8rem 0rem round 40px); /* Adjusted for smaller screens */
@@ -215,10 +218,9 @@ a {
         width: 100%;
         height: auto;
     }
-}
-
-.phone3 {
-    margin-left: 40vh;
+    .phone3 {
+        margin-left: 0vh;
+    }
 }
 
 a {
@@ -989,7 +991,23 @@ svg {
     font-size: 36px; /* Adjust icon size */
     color: #333; /* Default color */
 }
-
+@media (max-width: 768px){
+    .payment-logos {
+        display: flex;
+        flex-wrap: wrap; /* Allows wrapping */
+        gap: 10px; /* Adds spacing between icons */
+        justify-content: center; /* Centers icons */
+        align-items: center;
+        max-width: 250px; /* Adjust as needed */
+        margin: auto;
+    }
+    
+    .payment-logos i {
+        font-size: 32px; /* Adjust icon size */
+        flex: 1 1 30%; /* Each icon takes 30% width, allowing wrapping */
+        text-align: center;
+    }
+}
 /* Hover effect */
 .payment-logos i:hover {
     color: #ff2a00; /* Change color on hover */
