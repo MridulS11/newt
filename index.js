@@ -352,3 +352,7 @@ function createAsh() {
 
 // Increase frequency to create a denser effect
 setInterval(createAsh, 700);
+
+if (location.hostname === "www.tiyeniapp.com") {
+    window.location.href = "https://tiyeniapp.com";
+}
