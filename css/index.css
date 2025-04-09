@@ -13,33 +13,144 @@
 }
 
 .header-container {
-    /* background: linear-gradient(90deg,#ff000094 100%, white 0%, #ff0000ae 100%); */
-    background: linear-gradient(180deg,white 0%, #ff000070 0%, white 98%);
+    background: linear-gradient(90deg,#ff000094 100%, white 0%, #ff0000ae 100%);
+    /* background-color: red; */
+    /* background: linear-gradient(90deg,#e64c4c 100%, white 0%, #e44e4eae 100%); */
+    background-size: 200% 100%; /* Double width for animation */
+    background-position: 100% 0%; /* Start from right */
+    height: 8vh;
 }
-/* Ensure images in Safari maintain aspect ratio */
+
 header {
-    display: flex;
-    justify-content: space-between; /* Ensures space is distributed evenly */
-    align-items: center;
-    
-    position: fixed; /* Keeps header at the top */
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    
-    width: 95%; /* Allows some space on both sides */
-    max-width: 1670px; /* Prevents it from stretching too much *
-    
-    background-color: rgba(0, 36, 50, 0.85); /* Keeps it visible */
+    z-index: 1000;
+    width: 95%;
+    max-width: 1670px;
+    margin: 0 auto;
+    margin-top: 0.7vh;
+    background-color: rgba(0, 36, 50, 0.85);
     color: #fffafa;
     border-radius: 2vh;
-    padding: 10px 2%; /* Adjusts spacing */
-    margin: 0 auto; /* Centers the header */
-    margin-top: 0.7vh;
-
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    z-index: 100000; /* Keeps it on top */
+    padding: 10px 2%;
 }
+
+.header-links {
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-size: 1.2rem;         /* Increase font size */
+    color: #fffafa;            /* Default font color */
+    transition: color 0.3s ease; /* Only color transition */
+    text-decoration: none;
+    background-color: transparent; /* Ensure no background by default */
+}
+
+.header-links:hover {
+    color: hsl(0, 100%, 50%);           /* Change to a golden yellow or any color you like */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .logo-icon {
+    width: 32px;
+    height: 32px;
+    background: #b91c1c;
+    border-radius: 0.75rem;
+  }
+  
+  .logo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+  }
+  
+  .burger span {
+    width: 24px;
+    height: 3px;
+    background-color: #fde68a;
+    border-radius: 4px;
+  }
+  
+  .mobile-menu {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .mobile-menu.open {
+    display: flex;
+  }
+  
+  .mobile-menu-logo {
+    margin-top: 1rem;
+    border-top: 1px solid white;
+    padding-top: 1rem;
+  }
+  
+  .mobile-logo {
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  #mobileMenu {
+    /* background: linear-gradient(90deg,#ff000094 100%, white 0%, #ff0000ae 100%); */
+    background-color: #000000c7;
+    position: fixed;
+  }
+  #mobileMenu a:hover {
+    color: hsl(0, 100%, 60%);
+    background-color: transparent;
+  }
+  /* Responsive */
+  @media screen and (max-width: 768px) {
+    .nav,
+    .left-logo,
+    .right-logo {
+      display: none;
+    }
+  
+    .mobile-logo {
+      display: flex;
+    }
+  
+    .burger {
+      display: flex;
+    }
+  }
 
 a {
     display: flex;
@@ -261,55 +372,6 @@ html {
     font-family: "Ubuntu", sans-serif;
 }
 
-header > .collapsible-header{
-    display: flex;
-    gap: 1rem;
-    width: 100%;
-    background-color: inherit;
-    place-content: center;
-    overflow: visible;
-    transition: width 0.3s ease;
-}
-
-.animated-collapse{
-    transition: width 0.3s ease;
-}
-
-@media not all and (min-width: 1024px) {
-    header .collapsible-header {
-        position: fixed;
-        right: 0px;
-        flex-direction: column;
-        opacity: 0;
-        height: 100vh;
-        min-height: 100vh;
-        height: 100dvh;
-        width: 0vw;
-        justify-content: space-between;
-        padding: 5px;
-        padding-top: 5%;
-        padding-bottom: 5%;
-        place-items: end;
-        background-color: #040404;
-        color: #ffffff;
-        overflow-y: auto;
-        box-shadow: 3px 0px 3px 2px #9f9f9f;
-    }
-
-    .header-links{
-        color: rgb(255, 255, 255);
-    } 
-}
-
-
-.header-links {
-    display: flex;
-    align-items: center;
-    min-width: fit-content;
-    border-radius: 5px;
-    padding: 5px 10px;
-    transition: background-color 0.5s, color 0.5s;
-}
 
 #backchange {
     /* background: linear-gradient(90deg, white 0%, #62ff007a 100%); */
@@ -835,18 +897,6 @@ footer{
     margin-top: 20px;
 }
 
-svg {
-    animation: bounce 1s infinite; /* Add bounce animation to SVG */
-}
-
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(10px);
-    }
-}
 /* Rain Container */
 #rain-container {
     position: fixed;
