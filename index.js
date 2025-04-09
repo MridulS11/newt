@@ -1,62 +1,20 @@
-// initialization
+const burgerBtn = document.getElementById('burgerBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
 
-const RESPONSIVE_WIDTH = 3000
+  // Toggle menu on burger click
+  burgerBtn.addEventListener('click', (e) => {
+    e.stopPropagation(); // Prevents bubbling
+    mobileMenu.classList.toggle('hidden');
+  });
 
-let headerWhiteBg = false
-let isHeaderCollapsed = window.innerWidth < RESPONSIVE_WIDTH
-const collapseBtn = document.getElementById("collapse-btn")
-const collapseHeaderItems = document.getElementById("collapsed-header-items")
+  // Close menu on outside click
+  document.addEventListener('click', (e) => {
+    const isClickInside = mobileMenu.contains(e.target) || burgerBtn.contains(e.target);
 
-
-
-function onHeaderClickOutside(e) {
-
-    if (!collapseHeaderItems.contains(e.target)) {
-        toggleHeader()
+    if (!isClickInside && !mobileMenu.classList.contains('hidden')) {
+      mobileMenu.classList.add('hidden');
     }
-
-}
-
-
-function toggleHeader(close = false) {
-    if (close || !isHeaderCollapsed) {
-        collapseHeaderItems.classList.remove("opacity-100");
-        collapseHeaderItems.style.width = "0vw";
-        collapseHeaderItems.style.display = "none";  // Ensure it's hidden
-        collapseBtn.classList.remove("bi-x", "max-lg:tw-fixed");
-        collapseBtn.classList.add("bi-list");
-        isHeaderCollapsed = true;
-        window.removeEventListener("click", onHeaderClickOutside);
-        return;
-    }
-
-    collapseHeaderItems.style.display = "flex";  // Make it visible before applying styles
-    collapseHeaderItems.classList.add("opacity-100");
-    collapseHeaderItems.style.width = "60vw";
-    collapseBtn.classList.remove("bi-list");
-    collapseBtn.classList.add("bi-x", "max-lg:tw-fixed");
-    isHeaderCollapsed = false;
-
-    setTimeout(() => window.addEventListener("click", onHeaderClickOutside), 1);
-}
-
-
-// Close the menu when a link is clicked
-document.querySelectorAll(".header-links").forEach(link => {
-    link.addEventListener("click", () => toggleHeader(true));
-});
-
-
-function responsive() {
-    if (window.innerWidth > RESPONSIVE_WIDTH) {
-        collapseHeaderItems.style.width = ""
-
-    } else {
-        isHeaderCollapsed = true
-    }
-}
-
-window.addEventListener("resize", responsive)
+  });
 
 
 /**
@@ -353,6 +311,3 @@ function createAsh() {
 // Increase frequency to create a denser effect
 setInterval(createAsh, 700);
 
-if (location.hostname === "www.tiyeniapp.com") {
-    window.location.href = "https://tiyeniapp.com";
-}
