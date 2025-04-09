@@ -1,21 +1,31 @@
 const burgerBtn = document.getElementById('burgerBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
+const mobileMenu = document.getElementById('mobileMenu');
+const mobileLinks = mobileMenu.querySelectorAll('a');
 
-  // Toggle menu on burger click
-  burgerBtn.addEventListener('click', (e) => {
-    e.stopPropagation(); // Prevents bubbling
-    mobileMenu.classList.toggle('hidden');
+function toggleMenu() {
+  mobileMenu.classList.toggle('hidden');
+  burgerBtn.classList.toggle('open');
+}
+
+burgerBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
+  toggleMenu();
+});
+
+mobileLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    mobileMenu.classList.add('hidden');
+    burgerBtn.classList.remove('open');
   });
+});
 
-  // Close menu on outside click
-  document.addEventListener('click', (e) => {
-    const isClickInside = mobileMenu.contains(e.target) || burgerBtn.contains(e.target);
-
-    if (!isClickInside && !mobileMenu.classList.contains('hidden')) {
-      mobileMenu.classList.add('hidden');
-    }
-  });
-
+document.addEventListener('click', (e) => {
+  const isClickInside = mobileMenu.contains(e.target) || burgerBtn.contains(e.target);
+  if (!isClickInside && !mobileMenu.classList.contains('hidden')) {
+    mobileMenu.classList.add('hidden');
+    burgerBtn.classList.remove('open');
+  }
+});
 
 /**
  * Animations
