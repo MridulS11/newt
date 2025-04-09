@@ -85,21 +85,38 @@ header {
   }
   
   .burger {
-    display: none;
+    display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 5px;
+    width: 32px;
+    height: 32px;
     background: none;
     border: none;
     cursor: pointer;
-    z-index: 10;
+    z-index: 1001;
   }
   
   .burger span {
-    width: 24px;
+    width: 100%;
     height: 3px;
-    background-color: #fde68a;
-    border-radius: 4px;
+    background-color: #ffffff;  /* White */
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+  }  
+  
+  .burger.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
   }
+  
+  .burger.open span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .burger.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -6.5px);
+  }
+  
   
   .mobile-menu {
     display: none;
