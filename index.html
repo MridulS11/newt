@@ -1,914 +1,1199 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <style>
-        </style>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Traveler</title>
-        <meta name="description" content="" />
-        <link
-            rel="shortcut icon"
-            href="Tiyeni/WhatsApp Image 2025-02-02 at 16.55.44 (1).png"
-            type="image/x-icon"
-        />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
-        <!-- Open Graph / Facebook -->
-        <meta property="og:title" content="Tiyeni" />
-        <meta property="og:description" content="Book Cab With The Best!" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="tiyeniapp.com" />
-        <!--Replace with the current website url-->
-        <meta property="og:image" content="https://github.com/MridulS11/newt/blob/main/Tiyeni/WhatsApp%20Image%202025-02-02%20at%2016.55.44%20(1).png" />
+:root{
 
-        <!-- <link rel="stylesheet" href="../../tailwind-css/tailwind-runtime.css" /> -->
-        <link rel="stylesheet" href="./css/tailwind-build.css">
-        <link rel="stylesheet" href="css/index.css" />
+    --bg-color: #ffffff;
 
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
-            integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
-        />
-        <script src="https://cdn.tailwindcss.com"></script>
-        <script>
-            if (location.hostname === "www.tiyeniapp.com") {
-              window.location.href = "https://tiyeniapp.com";
-            }
-        </script>
-    </head>
-    <body
-        class="tw-flex tw-min-h-[100vh] tw-flex-col tw-bg-white tw-text-black"
-    >
-        <section
-            class="hero-section tw-mt-1 tw-relative tw-flex tw-min-h-[100vh] tw-w-full tw-max-w-[100vw] tw-flex-col tw-overflow-hidden "
-            id="backchange"
-        >   
-        <div id="rain-container"></div>
-            <div class="tw-w-full tw-h-full tw-p-[5%]
-                        tw-place-content-center tw-min-h-[100vh]
-                        tw-gap-6 max-xl:tw-place-items-center
-                        tw-flex max-xl:tw-flex-col">
-                    <div
-                        class="tw-flex tw-h-full tw-min-h-[100vh] tw-w-full tw-max-w-[50%] tw-flex-col tw-place-content-center tw-gap-6 tw-p-[5%] max-xl:tw-place-items-center max-lg:tw-p-4"
-                    >
-                        <div
-                            class="tw-flex tw-flex-col tw-place-content-center tw-items-center"
-                        >
-                            <div
-                                class="reveal-up tw-text-center tw-text-6xl tw-font-semibold tw-uppercase tw-leading-[80px] max-lg:tw-text-4xl max-md:tw-leading-snug"
-                            >
-                                <span><img src = "Tiyeni/logonewtrans.png"/></span>
-                                <span class=""> Ride </span>
-                                <br />
-                                <span class=""> Anywhere </span>
-                                <br />
-                                <span class=""> Around </span>
-                                <br />
-                                <span class=""> Your City </span>
-                            </div>
-                            
-                        </div>
+    --btn-color: #fdfdfd;/* button color*/
+    --btn-bg: #000;/* button bg color*/
 
-                        <div class="tw-flex tw-flex-col tw-w-full tw-place-items-center tw-place-content-center">
-                            <div
-                                class="reveal-up tw-mt-3 tw-max-w-[450px] tw-p-2 tw-text-center tw-text-gray-700 max-lg:tw-max-w-full"
-                            >
-                            Your city, your ride—anytime, anywhere. 
-                            
-                            Experience seamless travel now!
-                            </div>
-                            <div class="reveal-up tw-mt-10 tw-flex tw-flex-col tw-items-center tw-gap-4">
-                                <div class="tw-flex tw-gap-4">
-                                    <a href="https://play.google.com/store" target="_blank">
-                                        <img src="./assets/images/brand-logos/google-play-badge.png" 
-                                        alt="Google play badge" 
-                                        class="tw-max-w-[150px] tw-h-[45px]">
-                                    </a>
-                                    <a href="https://www.apple.com/app-store/" target="_blank">
-                                        <img src="./assets/images/brand-logos/app-store-badge.png" 
-                                        alt="App store badge" 
-                                        class="tw-max-w-[150px] tw-h-[45px]">
-                                    </a>
-                                </div>
-                            </div>
-                            
-                        </div>
-                    </div>
+    --primary-text-color: #000;
+    --header-link-hover: #000;
+    --input-hover-bd-color: #000;
+}
 
-                    <div class="reveal-up tw-w-full tw-h-full tw-flex tw-place-content-center">
-                        <div class="tw-relative tw-max-w-[500px] slide-in tw-flex tw-place-content-center">
-                            <!-- Wrapper without overflow hidden -->
-                            <div>
-                                <img src="tiyeninew/PHONE DISPLAY new.png" 
-                                    alt="phone" class="phone  tw-w-[100%] tw-max-w-[350px] tw-max-h-[500px] tw-object-contain tw-rounded-[40px]">
-                            </div>
-                            <!-- Ensure Slideshow is properly placed -->
-                            <div class="tw-absolute tw-bottom-10 tw-max-h-[350px]">
-                                <div class="swiper-wrapper tw-w-full tw-max-h-[650px] tw-relative" id="slideshow">
-                                    <!-- Slideshow content -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
+.header-container {
+    background: linear-gradient(90deg,#ff000094 100%, white 0%, #ff0000ae 100%);
+    /* background-color: red; */
+    /* background: linear-gradient(90deg,#e64c4c 100%, white 0%, #e44e4eae 100%); */
+    background-size: 200% 100%; /* Double width for animation */
+    background-position: 100% 0%; /* Start from right */
+    height: 8vh;
+}
 
-            </div>
-        </section>
-        <header class="header-container flex items-center justify-between">
-            <!-- Left: Main Logo (desktop only) -->
-            <div class="hidden md:flex items-center">
-              <a href="#">
-                <img src="Tiyeni/logonewtrans.png" alt="logo" class="logo-img object-contain" />
-              </a>
-            </div>
-        
-            <!-- Center: Menu (desktop) -->
-            <nav class="hidden lg:flex gap-6 text-white font-medium">
-              <a class="header-links" href="#target-section" class="header-links">About us</a>
-              <a class="header-links" href="#pricing" class="header-links">Pricing</a>
-              <a class="header-links" href="https://www.techgeniusmw.com/services.html" class="header-links" target="_blank">Solutions</a>
-              <a class="header-links" href="#backchange" class="header-links">Features</a>
-              <a class="header-links" href="https://www.techgeniusmw.com/" class="header-links" target="_blank">Company</a>
-            </nav>
-        
-            <!-- Right: Second Logo (desktop only) -->
-            <div class="hidden lg:flex items-center">
-              <a href="#">
-                <img src="Tiyeni/logonewtrans.png" alt="logo" class="logo-img" />
-              </a>
-            </div>
-        
-            <!-- Mobile: Center logo -->
-            <div class="md:hidden absolute left-1/2 transform -translate-x-1/2">
-              <img src="Tiyeni/logonewtrans.png" alt="Mobile Logo" class="logo-img" />
-            </div>
-        
-            <!-- Mobile: Burger Button -->
-            <div class="lg:hidden ml-auto">
-              <button id="burgerBtn" class="p-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-black-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
-                </svg>
-              </button>
-            </div>
-          </header>
-        
-          <!-- Mobile Menu -->
-          <div id="mobileMenu" class="lg:hidden hidden flex-col space-y-4 text-white p-5 mt-[9vh] absolute w-full z-50">
-            <a href="#target-section" class="font-medium">About us</a>
-            <a href="#pricing" class="font-medium">Pricing</a>
-            <a href="https://www.techgeniusmw.com/services.html" target="_blank" class="font-medium">Solutions</a>
-            <a href="#backchange" class="font-medium">Features</a>
-            <a href="https://www.techgeniusmw.com/" target="_blank" class="font-medium">Company</a>
-            <!-- Centered Image -->
-            <div class="flex justify-center items-center pt-4 border-t border-white mt-4">
-              <img src="Tiyeni/logonewtrans.png" alt="Logo" class="logo-img" />
-            </div>
-          </div>
-          
-        <section
-            class="tw-relative tw-flex tw-w-full tw-max-w-[100vw] tw-flex-col tw-place-content-center tw-place-items-center tw-overflow-hidden tw-p-8"
-        >
-        <div></div>
-            <h2 class="reveal-up tw-text-3xl max-md:tw-text-xl">
-                Why Choose Tiyeni?
-            </h2>
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    width: 95%;
+    max-width: 1670px;
+    margin: 0 auto;
+    margin-top: 0.7vh;
+    background-color: rgba(0, 36, 50, 0.85);
+    color: #fffafa;
+    border-radius: 2vh;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px 2%;
+}
 
-            <div class="reveal-up carousel-container">
-                <!-- Include Font Awesome for icons -->
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+.header-links {
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-size: 1.2rem;         /* Increase font size */
+    color: #fffafa;            /* Default font color */
+    transition: color 0.3s ease; /* Only color transition */
+    text-decoration: none;
+    background-color: transparent; /* Ensure no background by default */
+}
 
-            <div class="carousel-wrapper">
-                <div class="carousel lg:w-place-content-center tw-mt-6 tw-flex tw-w-full tw-justify-between tw-flex-wrap">
-                    <!-- Carousel Items -->
-                    <div class="carousel-img tw-flex tw-items-center tw-justify-center tw-h-[30px] tw-flex-grow tw-basis-1/6 
-                                tw-text-2xl tw-text-gray-700">
-                        <i class="fas fa-thumbs-up"></i> Convenient
-                    </div>
-                    <div class="carousel-img tw-flex tw-items-center tw-justify-center tw-h-[30px] tw-flex-grow tw-basis-1/6 
-                                tw-text-2xl tw-text-gray-700">
-                        <i class="fas fa-check-circle"></i> Reliable
-                    </div>
-                    <div class="carousel-img tw-flex tw-items-center tw-justify-center tw-h-[30px] tw-flex-grow tw-basis-1/6 
-                                tw-text-2xl tw-text-gray-700">
-                        <i class="fas fa-bolt"></i> Quick
-                    </div>
-                    <div class="carousel-img tw-flex tw-items-center tw-justify-center tw-h-[30px] tw-flex-grow tw-basis-1/6 
-                                tw-text-2xl tw-text-gray-700">
-                        <i class="fas fa-shield-alt"></i> Safe
-                    </div>
-                    <div class="carousel-img tw-flex tw-items-center tw-justify-center tw-h-[30px] tw-flex-grow tw-basis-1/6 
-                                tw-text-2xl tw-text-gray-700">
-                        <i class="fas fa-wallet"></i> Cheaper
-                    </div>
-                    <div class="carousel-img tw-flex tw-items-center tw-justify-center tw-h-[30px] tw-flex-grow tw-basis-1/6 
-                                tw-text-2xl tw-text-gray-700">
-                        <i class="fas fa-handshake"></i> Trustworthy
-                    </div>
-                
-                    <!-- Duplicate items for seamless looping -->
-                    <div class="carousel-img tw-flex tw-items-center tw-justify-center tw-h-[30px] tw-flex-grow tw-basis-1/6 
-                                tw-text-2xl tw-text-gray-700">
-                        <i class="fas fa-thumbs-up"></i> Convenient
-                    </div>
-                    <div class="carousel-img tw-flex tw-items-center tw-justify-center tw-h-[30px] tw-flex-grow tw-basis-1/6 
-                                tw-text-2xl tw-text-gray-700">
-                        <i class="fas fa-check-circle"></i> Reliable
-                    </div>
-                    <div class="carousel-img tw-flex tw-items-center tw-justify-center tw-h-[30px] tw-flex-grow tw-basis-1/6 
-                                tw-text-2xl tw-text-gray-700">
-                        <i class="fas fa-bolt"></i> Quick
-                    </div>
-                    <div class="carousel-img tw-flex tw-items-center tw-justify-center tw-h-[30px] tw-flex-grow tw-basis-1/6 
-                                tw-text-2xl tw-text-gray-700">
-                        <i class="fas fa-shield-alt"></i> Safe
-                    </div>
-                    <div class="carousel-img tw-flex tw-items-center tw-justify-center tw-h-[30px] tw-flex-grow tw-basis-1/6 
-                                tw-text-2xl tw-text-gray-700">
-                        <i class="fas fa-wallet"></i> Cheaper
-                    </div>
-                    <div class="carousel-img tw-flex tw-items-center tw-justify-center tw-h-[30px] tw-flex-grow tw-basis-1/6 
-                                tw-text-2xl tw-text-gray-700">
-                        <i class="fas fa-handshake"></i> Trustworthy
-                    </div>
-                </div>
-                
-            </div>
-            
-            
-            
-            </div>
-        </section>
+.header-links:hover {
+    color: hsl(0, 100%, 50%);           /* Change to a golden yellow or any color you like */
+}
 
-        <section class="make-white tw-w-full tw-flex tw-flex-col tw-items-center tw-px-[3%] tw-p-4 tw-gap-[10%] max-md:tw-flex-col tw-overflow-hidden tw-min-h-[30vh]" id="book">
-            
-            <!-- Make sure Font Awesome is loaded -->
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-            <!-- Custom Animation -->
-            <style>
-              @keyframes drive {
-                0%, 100% {
-                  transform: translateX(0);
-                }
-                50% {
-                  transform: translateX(15px);
-                }
-              }
-            
-              .tw-animate-drive {
-                animation: drive 2s ease-in-out infinite;
-              }
-            </style>
-            
-            <!-- Heading with Car Icon -->
-            <div class="tw-flex tw-items-center tw-gap-4 tw-mt-7">
-              <h2 class="tw-text-3xl max-md:tw-text-2xl">Plan Your Next Destination</h2>
-              <i class="fas fa-car tw-text-4xl tw-text-orange-500 tw-animate-drive"></i>
-            </div>
-            <h2 class="tw-text-3xl max-md:tw-text-2xl tw-mt-5">With Us!</h2>
-            
-            <div class="tw-flex tw-items-center tw-gap-6 max-md:tw-flex-col max-md:tw-gap-4 tw-mt-8 tw-w-full">
-                <!-- Slideshow container: shifted left with fixed size -->
-                <div class="dis-bor tw-self-start tw-w-[450px] tw-aspect-[3/3] tw-ml-2 tw-border-2 tw-border-solid tw-border-gray-300 tw-rounded-2xl">
-                    <a class="tw-p-4 tw-border-4 tw-border-solid tw-border-black tw-rounded-lg tw-inline-block tw-w-full tw-h-full hover:tw-border-red-400">
-                        <img src="Tiyeni/WE-BANNERS.png" alt="Slide 1" class="slide tw-w-[450px] tw-h-auto tw-object-contain tw-border-2 tw-border-solid tw-border-gray-100 tw-rounded-md">
-                        <img src="tiyeninew/slideshow2.jpeg" alt="Slide 2" class="slide tw-w-full tw-h-full tw-object-contain tw-border-2 tw-border-solid tw-border-gray-100 tw-rounded-md" style="display: none;">
-                        <img src="tiyeninew/slideshow.jpeg" alt="Slide 3" class="slide tw-w-full tw-h-full tw-object-contain tw-border-2 tw-border-solid tw-border-gray-100 tw-rounded-md" style="display: none;">
-                    </a>
-                </div>
-                <!-- Add FontAwesome for Icons -->
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-            <div class="ad-container">
-                <div class="ad-text">Avail <br> Huge <br> Discounts!</div>
-                <div class="ad-text2">With Any Method That You Like</div>
-
-                <div class="payment-options">
-                    <div class="payment-item"><i class="fas fa-money-bill-wave"></i> Cash</div>
-                    <div class="payment-item"><i class="fas fa-credit-card"></i> Airtel Money</div>
-                    <div class="payment-item"><i class="fas fa-mobile-alt"></i> Mobile Banking</div>
-                    <div class="payment-item"><i class="fas fa-wallet"></i> Mpamba</div>
-                </div>
-            </div>
-
-                
-            </div>
-                       
-        </section>
-        
-
-
-        <section
-            class="tw-relative tw-mt-10 tw-flex tw-min-h-[100vh] tw-w-full tw-max-w-[100vw] tw-flex-col tw-place-items-center lg:tw-p-6 bg-gray-500"
-            id="backchange2"
-        >
-
-            <h2 class="tw-text-4xl max-md:tw-text-3xl">Experience The Luxury</h2>
-            
-            <div
-                class="reveal-up tw-mt-[5%] tw-flex tw-h-full tw-w-full tw-place-content-center tw-gap-8 tw-p-4 max-lg:tw-max-w-full max-lg:tw-flex-col"
-            >
-                <div
-                    class="tw-flex tw-flex-col tw-gap-[200px] tw-h-full tw-max-w-[50%] max-lg:tw-max-w-full tw-px-[10%] max-lg:tw-px-4 max-lg:tw-gap-16 max-lg:tw-w-full lg:tw-top-[20%]"
-                >   
-                    <div class="tw-flex tw-gap-6">
-                        <div class="tw-w-[80px] tw-h-[80px] tw-min-w-[80px] 
-                                    tw-min-h-[80px] tw-text-5xl
-                                    max-lg:tw-min-h-[60px] max-lg:tw-min-w-[60px] max-lg:tw-h-[60px] max-lg:tw-w-[60px]">
-                            <!--<img src="./assets/images/icons/unlock.png" alt="unlock" class="tw-object-contain tw-w-full tw-h-full"> -->
-                            <i class="bi bi-map"></i>
-                        </div>
-                        <h3
-                            class="tw-text-4xl max-lg:tw-text-2xl max-lg:tw-font-normal"
-                        >
-                            Easily navigate your ride from the app
-                        </h3>
-                    </div>
-
-                    <div class="tw-flex tw-gap-6">
-                        <div class="tw-w-[80px] tw-h-[80px] tw-text-5xl tw-min-w-[80px] tw-min-h-[80px] max-lg:tw-min-h-[60px] max-lg:tw-min-w-[60px] max-lg:tw-h-[60px] max-lg:tw-w-[60px]">
-                            <!-- <img src="./assets/images/icons/lighting.png" alt="unlock" class="tw-object-contain tw-w-full tw-h-full"> -->
-                            <i class="bi bi-lightning-fill"></i>
-                        </div>
-                        <h3
-                            class="tw-text-4xl max-lg:tw-text-2xl max-lg:tw-font-normal"
-                        >
-                            Find your ride as fast as lightning but reach your destination at the comfort of a breeze.
-                        </h3>
-                    </div>
-
-                    <div class="tw-flex tw-gap-6">
-                        <div class="tw-w-[80px] tw-text-5xl tw-h-[80px] tw-min-w-[80px] tw-min-h-[80px] max-lg:tw-min-h-[60px] max-lg:tw-min-w-[60px] max-lg:tw-h-[60px] max-lg:tw-w-[60px]">
-                            <!-- <img src="./assets/images/icons/credit-card.png" alt="unlock" class="tw-object-contain tw-w-full tw-h-full"> -->
-                            <i class="bi bi-credit-card"></i>
-                        </div>
-                        <h3
-                            class="tw-text-4xl max-lg:tw-text-2xl max-lg:tw-font-normal"
-                        >
-                            Use your preferred payment methods without any hassle.
-                        </h3>
-                    </div>
-
-                    <div class="tw-flex tw-gap-6">
-                        <div class="tw-w-[80px] tw-text-5xl tw-h-[80px] tw-min-w-[80px] tw-min-h-[80px] max-lg:tw-min-h-[60px] max-lg:tw-min-w-[60px] max-lg:tw-h-[60px] max-lg:tw-w-[60px]">
-                            <!-- <img src="./assets/images/icons/music.png" alt="unlock" class="tw-object-contain tw-w-full tw-h-full"> -->
-                            <i class="bi bi-music-note-beamed"></i>
-                        </div>
-                        <h3
-                            class="tw-text-4xl max-lg:tw-text-2xl max-lg:tw-font-normal"
-                        >
-                            Wanna lock in with some tunes? Its all your choice.
-                        </h3>
-                    </div>
-
-                    <div class="tw-flex tw-gap-6">
-                        <div class="tw-w-[80px] tw-text-5xl tw-h-[80px] tw-min-w-[80px] tw-min-h-[80px] max-lg:tw-min-h-[60px] max-lg:tw-min-w-[60px] max-lg:tw-h-[60px] max-lg:tw-w-[60px]">
-                            <!-- <img src="./assets/images/icons/unlock.png" alt="unlock" class="tw-object-contain tw-w-full tw-h-full"> -->
-                            <i class="bi bi-lock-fill"></i>
-                        </div>
-                        <h3
-                            class="tw-text-4xl max-lg:tw-text-2xl max-lg:tw-font-normal"
-                        >
-                            Don't worry about your data, we keep it safe. Privacy First!
-                        </h3>
-                    </div>
-
-                    <div class="tw-flex tw-gap-6">
-                        <div class="tw-w-[80px] tw-text-5xl tw-h-[80px] tw-min-w-[80px] tw-min-h-[80px] max-lg:tw-min-h-[60px] max-lg:tw-min-w-[60px] max-lg:tw-h-[60px] max-lg:tw-w-[60px]">
-                            <!-- <img src="./assets/images/icons/lighting.png" alt="unlock" class="tw-object-contain tw-w-full tw-h-full"> -->
-                            <i class="bi bi-wind"></i>
-                        </div>
-                        <h3
-                            class="tw-text-4xl max-lg:tw-text-2xl max-lg:tw-font-normal"
-                        >
-                            Smooth user experience for every choice you make with us.
-                        </h3>
-                    </div>
-
-                </div>
-
-                <div
-                    class="tw-relative tw-flex tw-max-w-[30%] max-lg:tw-max-w-full tw-flex-col tw-place-items-start tw-gap-4  tw-p-2 max-lg:tw-place-items-center max-lg:tw-place-content-center max-lg:tw-w-full"
-                >
-                    <div
-                        class="tw-top-20 lg:tw-sticky tw-max-h-[800px] tw-h-full tw-max-w-[850px] max-lg:tw-max-h-fit max-lg:tw-max-w-[320px] tw-overflow-hidden tw-rounded-lg"
-                    >
-                        <img
-                            src="tiyeninew/PHONE DISPLAY V2 (1).png"
-                            alt="phone"
-                            class="phone2 tw-w-[100%] tw-max-w-[350px] tw-max-h-[500px] tw-object-contain tw-rounded-[40px]"
-                        />
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section
-            class="tw-relative tw-mt-10 tw-flex tw-min-h-[20vh] tw-w-full tw-max-w-[100vw] tw-flex-col tw-place-items-center lg:tw-p-6"
-            id="booking"
-            >
-
-            <div class="tw-w-full tw-flex tw-mt-8 tw-h-fit
-                        tw-max-w-[100vw] tw-overflow-hidden tw-relative">
-                <div class="edge-gradient tw-z-10 tw-absolute tw-w-full tw-h-full tw-left-0">
-                </div>
-                <div class="countries-container scroller tw-flex tw-w-full tw-gap-3" 
-                    data-direction="right" >
-                </div>
-                
-            </div>
-            <div class="tw-w-full tw-flex tw-relative tw-h-fit tw-mt-8
-                    tw-max-w-[100vw] 
-                    tw-overflow-hidden">
-                <div class="edge-gradient tw-z-10 tw-absolute tw-w-full tw-h-full tw-left-0">
-                </div>
-                <div class="places-container scroller tw-flex tw-w-full tw-gap-3" 
-                    data-direction="left" data-speed="slow" >
-                </div>
-            </div>
-            
-        </section>
-
-        <section class="tw-w-full tw-flex 
-                    tw-flex-col
-                    tw-place-content-center 
-                    tw-px-[5%]
-                    tw-p-4
-                    tw-gap-[10%]
-                    tw-place-items-center
-                    max-md:tw-flex-col
-                    tw-overflow-hidden
-                    tw-min-h-[30vh]
-                    "
-                    id="book"
-                    >
-
-            <h2 class="tw-text-3xl max-md:tw-text-2xl tw-mt-7">
-                Become a driver at Tiyeni today or add your fleet as a company. 
-            </h2>
-
-            <h2 class="tw-text-3xl max-md:tw-text-2xl tw-mt-7">
-                 Join now and start your journey!
-            </h2>
-            <div class="tw-flex tw-items-center tw-gap-6 max-md:tw-flex-col max-md:tw-gap-4 tw-mt-8">
-                <div>
-                        <img src="Tiyeni/WEB BANNER 1 copy.png" class="driver">
-                </div>
-                <div class="fleet tw-flex tw-flex-col tw-items-center tw-gap-6">
-                    <div class="tw-text-lg tw-font-semibold tw-text-center tw-mb-4 tw-max-w-[50%] max-md:tw-w-full">
-                        To Join Tiyeni! Simply:
-                    </div>
-                    <div class="tw-text-center tw-mb-4 tw-max-w-[50%] max-md:tw-w-full">
-                        <!-- Join Tiyeni as a driver! Simply:<br> -->
-                        1. Download the Tiyeni Driver App,<br>
-                        2. Register, and you’re ready to go.<br>
-                    </div>
-                    <div class="tw-text-center tw-mb-4 tw-max-w-[50%] max-md:tw-w-full">
-                        - Need help? Contact us via email or phone.
-                    </div>
-            
-                    <div class="tw-flex tw-gap-6">
-                        <div>
-                            <a href="https://play.google.com/store/apps/details?id=com.dts.freefiremax&pcampaignid=web_share" 
-                               target="_blank" 
-                               rel="noopener noreferrer">
-                                <img src="./assets/images/brand-logos/app-store-badge.png" 
-                                     alt="App store badge" 
-                                     class="tw-max-w-[150px] tw-h-[50px]">
-                            </a>
-                        </div>                
-                        <div>
-                            <img src="./assets/images/brand-logos/google-play-badge.png" 
-                                 alt="Google play badge" 
-                                 class="tw-max-w-[150px] tw-h-[50px]">
-                        </div>
-                    </div>
-                    <div class="tw-text-center tw-max-w-[50%] max-md:tw-w-full tw-mx-auto">
-                        <p>Or<br>Scan our QR Code below</p>
-                        <div class="arrow-container">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 50 50" fill="none">
-                                <path d="M25 40L25 10" stroke="#000" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M10 25L25 40L40 25" stroke="#000" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                    </div>
-                    
-                    <div>
-                        <a class="tw-p-1 tw-border-4 tw-border-solid tw-border-gray-400 tw-rounded-lg">
-                            <img src="Tiyeni/qr.png" class="tw-rounded-lg" style="width: 200px; height: auto;">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-        
-        </section>
-
-        <section
-            class="read tw-flex tw-w-full tw-flex-col tw-place-content-center tw-place-items-center tw-p-[1%] max-lg:tw-p-3"
-            id="target-section"    
-            >
-            <h3
-                class="reveal-up tw-text-center tw-text-4xl tw-font-medium max-md:tw-text-2xl"
-            >
-                Read about us ✨
-            </h3>
-            <!-- Articles Section -->
-            <div class="reveal-up tw-mt-10 tw-flex tw-flex-wrap tw-place-content-center tw-gap-10 max-lg:tw-flex-col">
-                <!-- Article 1 -->
-                <div
-                    id="article1"
-                    class="tw-cursor-pointer tw-border-[1px] tw-border-black tw-flex tw-h-[400px] tw-w-[400px] tw-flex-col tw-gap-4 tw-overflow-clip tw-rounded-lg tw-p-4 max-lg:tw-w-[300px]"
-                >
-                    <div class="tw-h-[250px] tw-w-full tw-overflow-hidden tw-rounded-md">
-                        <img
-                            src="Tiyeni/WhatsApp Image 2025-02-03 at 08.25.16.jpeg"
-                            alt="article image"
-                            class="tw-h-full tw-w-full tw-object-cover tw-transition-transform tw-duration-[0.3s] hover:tw-scale-[1.04]"
-                        />
-                    </div>
-                    <h3 class="tw-mt-2 tw-text-2xl tw-font-semibold max-md:tw-text-xl">
-                        A little about us, Tiyeni
-                    </h3>
-                    <p class="tw-text-gray-800">
-                        Know Who We Are!
-                    </p>
-                    <span>
-                        <span>Learn more</span>
-                        <i class="bi bi-arrow-right"></i>
-                    </span>
-                </div>
-                <!-- Article 2 -->
-                <div
-                    id="article2"
-                    class="tw-cursor-pointer tw-border-[1px] tw-border-black tw-flex tw-h-[400px] tw-w-[400px] tw-flex-col tw-gap-4 tw-overflow-clip tw-rounded-lg tw-p-4 max-lg:tw-w-[300px]"
-                >
-                    <div class="tw-h-[250px] tw-w-full tw-overflow-hidden tw-rounded-md">
-                        <img
-                            src="Tiyeni/WhatsApp Image 2025-02-03 at 08.25.17.jpeg"
-                            alt="article image"
-                            class="tw-h-full tw-w-full tw-object-cover tw-transition-transform tw-duration-[0.3s] hover:tw-scale-[1.04]"
-                        />
-                    </div>
-                    <h3 class="tw-mt-2 tw-text-2xl tw-font-semibold max-md:tw-text-xl">
-                        Tiyeni For You
-                    </h3>
-                    <p class="tw-text-gray-800">
-                        Tiyeni Is All For You!
-                    </p>
-                    <span>
-                        <span>Learn more</span>
-                        <i class="bi bi-arrow-right"></i>
-                    </span>
-                </div>
-
-                <!-- Article 3 -->
-                <div
-                    id="article3"
-                    class="tw-cursor-pointer tw-border-[1px] tw-border-black tw-flex tw-h-[400px] tw-w-[400px] tw-flex-col tw-gap-4 tw-overflow-clip tw-rounded-lg tw-p-4 max-lg:tw-w-[300px]"
-                >
-                    <div class="tw-h-[210px] tw-w-full tw-overflow-hidden tw-rounded-md">
-                        <img
-                            src="Tiyeni/sienta.png"
-                            alt="article image"
-                            class="tw-h-full tw-w-full tw-object-cover tw-transition-transform tw-duration-[0.3s] hover:tw-scale-[1.04]">
-
-                    </div>
-                    <h3 class="tw-mt-2 tw-text-2xl tw-font-semibold max-md:tw-text-xl">
-                        Tiyeni Share
-                    </h3>
-                    <p class="tw-text-gray-800">
-                        Share A Ride And Save!
-                    </p>
-                    <span>
-                        <span>Learn more</span>
-                        <i class="bi bi-arrow-right"></i>
-                    </span>
-                </div>
-            </div>
-            <!-- Dialogue for Article 1 -->
-            <div id="dialog1" class="article-dialog">
-                <div class="article-dialog-content">
-                    <span class="article-close">&times;</span>
-                    <div class="article-dialog-scrollable">
-                        <h2 class="article-title">A little about us, Tiyeni</h2>
-                        <img
-                            src="Tiyeni/WhatsApp Image 2025-02-03 at 08.25.16.jpeg"
-                            alt="article image"
-                            class="article-image"
-                        />
-                        <p class="article-text">
-                            Tiyeni is a product developed by Techgenius Systems Ltd to transform Malawi’s transport industry. We enable travelers to book rides with comfort, safety, and punctuality. Technology has made life easier—Tiyeni brings this revolution to transportation in Malawi.
-                        </p>
-                        <p class="article-text">
-                            "Gilbert Kondani, Tiyeni C.E.O"
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Dialogue for Article 2 -->
-            <div id="dialog2" class="article-dialog">
-                <div class="article-dialog-content">
-                    <span class="article-close">&times;</span>
-                    <div class="article-dialog-scrollable">
-                        <h2 class="article-title">A little about the developers</h2>
-                        <img
-                            src="Tiyeni/WhatsApp Image 2025-02-03 at 08.25.17.jpeg"
-                            alt="article image"
-                            class="article-image"
-                        />
-                        <p class="article-text">
-                            Book a private ride with comfort, affordability, speed, and reliability. No sharing required—just you (or up to 3 people if traveling with friends/family).
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Dialogue for Article 3 -->
-            <div id="dialog3" class="article-dialog">
-                <div class="article-dialog-content">
-                    <span class="article-close">&times;</span>
-                    <div class="article-dialog-scrollable">
-                        <h2 class="article-title">From us to you</h2>
-                        <img
-                            src="Tiyeni/WhatsApp Image 2025-02-03 at 08.25.16.jpeg"
-                            alt="article image"
-                            class="article-image"
-                        />
-                        <p class="article-text">
-                            The cheapest taxi option! Share your ride with others heading the same direction and enjoy a 5% discount per co-rider. Max capacity: 3 customers total (including you).
-                        </p>
-                    </div>
-                </div>
-            </div>
-            
-        </section>
-
-        <section
-            class="faqq tw-flex tw-w-full tw-flex-col tw-place-content-center tw-place-items-center tw-gap-[10%] tw-px-[10%]"
-        >
-        <style>
-            @keyframes shake-question {
-              0%, 100% { transform: translateX(0); }
-              25% { transform: translateX(-1px); }
-              50% { transform: translateX(2px); }
-              75% { transform: translateX(-1px); }
-            }
-          
-            .tw-question-stack {
-              position: relative;
-              width: 40px;
-              height: 40px;
-              margin-left: 8px;
-            }
-          
-            .tw-question-stack i {
-              position: absolute;
-              color: #000;
-              animation: shake-question 1.2s ease-in-out infinite;
-              opacity: 0.9;
-            }
-          
-            .q1 { top: 0; left: 0; font-size: 1.5rem; transform: rotate(-10deg); }
-            .q2 { top: 5px; left: 10px; font-size: 1.25rem; transform: rotate(12deg); }
-            .q3 { top: 2px; left: -10px; font-size: 1.75rem; transform: rotate(4deg); }
-          </style>
-          
-          <!-- Visually centered block -->
-          <div class="ques-con tw-flex tw-justify-center tw-items-center tw-gap-2 tw-mb-6">
-            <h3 class="tw-text-4xl tw-font-medium tw-text-gray-800 max-md:tw-text-2xl">
-              FAQ
-            </h3>
-          
-            <!-- Cluster of wiggling question marks, stays next to heading -->
-            <div class="ques tw-question-stack">
-              <i class="fas fa-question q1"></i>
-              <i class="fas fa-question q2"></i>
-              <i class="fas fa-question q3"></i>
-            </div>
-          </div>
-          
-
-
-            <div
-                class="tw-mt-5 tw-flex tw-min-h-[300px] tw-w-full tw-max-w-[850px] tw-flex-col tw-gap-4"
-            >
-                <div
-                    class="faq tw-w-full"
-                >
-                    <div
-                        class="faq-accordion tw-flex tw-w-full tw-select-none tw-text-xl max-md:tw-text-lg"
-                    >
-                        <span>How do I book a ride?</span>
-                        <i class="bi bi-plus tw-ml-auto tw-font-semibold"></i>
-                    </div>
-                    <div class="content">
-                        Booking a ride is simple! Just enter your pickup and drop-off locations, choose your preferred ride type, and confirm your booking. You can book through our website or mobile app.
-                    </div>
-                </div>
-
-                <div
-                    class="faq tw-w-full"
-                >
-                    <div
-                        class="faq-accordion tw-flex tw-w-full tw-select-none tw-text-xl max-md:tw-text-lg"
-                    >
-                        <span>What payment methods do you accept?</span>
-                        <i class="bi bi-plus tw-ml-auto tw-font-semibold"></i>
-                    </div>
-                    <div class="content">
-                        We accept multiple payment options, including credit/debit cards, digital wallets (Google Pay, Apple Pay), and cash payments for select rides.
-                        <div class="payment-logos">
-                            <i class="fab fa-cc-mastercard"></i>
-                            <i class="fab fa-cc-visa"></i>
-                            <i class="fab fa-cc-paypal"></i>
-                            <i class="fab fa-cc-apple-pay"></i> <!-- Apple Pay -->
-                            <i class="fab fa-google-wallet"></i>  <!-- Google Wallet -->
-                            <i class="fa-solid fa-money-bill"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div
-                    class="faq tw-w-full"
-                >
-                    <div
-                        class="faq-accordion tw-flex tw-w-full tw-select-none tw-text-xl max-md:tw-text-lg"
-                    >
-                        <span>What if I need to cancel my ride?</span>
-                        <i class="bi bi-plus tw-ml-auto tw-font-semibold"></i>
-                    </div>
-                    <div class="content">
-                        You can cancel your ride through the app before the driver arrives. Cancellation fees may apply if the driver is already on the way. Check our cancellation policy for details.
-                    </div>
-                </div>
-
-                <div
-                    class="faq tw-w-full"
-                >
-                    <div
-                        class="faq-accordion tw-flex tw-w-full tw-select-none tw-text-xl max-md:tw-text-lg"
-                    >
-                        <span>What about my data?</span>
-                        <i class="bi bi-plus tw-ml-auto tw-font-semibold"></i>
-                    </div>
-                    <div class="content">
-                        Don't worry! We at Tiyeni take your data privacy seriously. Your data is safe with us and will never be shared with third parties without your consent.
-                    </div>
-                </div>
-            </div>
-            <div class="cont tw-flex tw-flex-col tw-place-items-center tw-gap-4">
-                <div class="tw-text-3xl max-md:tw-text-2xl">
-                    Still have questions?
-                </div>
-                <button id="contactButton" class="btn !tw-rounded-full !tw-bg-black hover:!tw-bg-gray-800 tw-transition-all">
-                    Contact
-                </button>
-            </div>
-            
-            <!-- Dialogue Box -->
-            <div id="contactDialog" class="dialog">
-                <div class="dialog-content">
-                    <span id="closeDialog" class="close">&times;</span>
-                    <h2 class="tw-text-2xl tw-font-bold tw-mb-4">Contact Information</h2>
-                    <p class="tw-text-lg tw-mb-2">📧 Email: <a href="mailto:example@example.com" class="tw-text-blue-500 hover:tw-underline">example@example.com</a></p>
-                    <p class="tw-text-lg">📞 Phone: <a href="tel:+1234567890" class="tw-text-blue-500 hover:tw-underline">+123 456 7890</a></p>
-                </div>
-            </div>
-        </section>
-
-        
-        <footer class="tw-mt-auto tw-flex tw-w-full tw-place-content-around tw-gap-3 tw-p-[5%] tw-px-[10%] tw-text-white max-md:tw-flex-col tw-items-center">
-            <!-- Logo and Address Section -->
-            <div class="tw-flex tw-h-full tw-w-[250px] tw-flex-col tw-place-items-center tw-gap-6 max-md:tw-w-full">
-                <img src="Tiyeni/logo_transparent.png" alt="logo" class="tw-max-w-[120px]" />
-                <div class="tw-text-center">
-                    Area 47,<br />
-                    Lilongwe,<br />
-                    Malawi<br /><br>
-                    <a href="https://www.google.com/maps/place/Area+47,+Lilongwe,+Malawi/" 
-                       target="_blank" 
-                       rel="noopener noreferrer" 
-                       class="tw-text-blue-600 hover:tw-text-blue-800 tw-inline-flex tw-items-center"
-                       style="display: inline-flex; align-items: center; gap: 6px; border-bottom: 1.5px solid currentColor;">
-                        Show on Map 
-                        <i class="fas fa-map-marker-alt"></i>
-                    </a>
-                </div>                                                       
-                <div class="tw-mt-1 tw-text-lg tw-font-semibold">Follow us</div>
-                <div class="social-icons tw-flex tw-gap-4 tw-text-2xl">
-                    <a href="https://www.facebook.com/profile.php?id=61575119330919" 
-                       target="_blank" 
-                       rel="noopener noreferrer" 
-                       aria-label="Facebook">
-                        <i class="bi bi-facebook"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/company/tiyeni-corp/" 
-                       target="_blank" 
-                       rel="noopener noreferrer" 
-                       aria-label="LinkedIn">
-                        <i class="fa-brands fa-linkedin-in"></i>
-                    </a>
-                    <a href="https://instagram.com/" 
-                       target="_blank" 
-                       rel="noopener noreferrer" 
-                       aria-label="Twitter">
-                        <i class="bi bi-twitter-x"></i>
-                    </a>              
-                    <a href="https://www.instagram.com/tiyeni.mw/" 
-                       target="_blank" 
-                       rel="noopener noreferrer" 
-                       aria-label="Instagram">
-                        <i class="bi bi-instagram"></i>
-                    </a>
-                </div>                
-            </div>
-        
-            <!-- Company Section -->
-            <div class="tw-flex tw-h-full tw-w-[250px] tw-flex-col tw-gap-4 tw-items-center">
-                <h2 class="tw-text-3xl max-md:tw-text-xl tw-text-center">Company</h2>
-                <div class="tw-flex tw-flex-col tw-gap-3 max-md:tw-text-sm tw-text-center">
-                    <a href="#" class="footer-link">Use cases</a>
-                    <a href="#" class="footer-link">Integrations</a>
-                    <a href="#" class="footer-link">Change logs</a>
-                    <a href="#" class="footer-link">Blogs</a>
-                    <a href="#" class="footer-link">Contact</a>
-                </div>
-            </div>
-        
-            <!-- Resources Section -->
-            <div class="tw-flex tw-h-full tw-w-[250px] tw-flex-col tw-gap-4 tw-items-center">
-                <h2 class="tw-text-3xl max-md:tw-text-xl tw-text-center">Resources</h2>
-                <div class="tw-flex tw-flex-col tw-gap-3 max-md:tw-text-sm tw-text-center">
-                    <a href="#" class="footer-link">About us</a>
-                    <a href="#" class="footer-link">FAQ</a>
-                    <a href="#" class="footer-link">Contact Us</a>
-                    <a href="#" class="footer-link">Blogs</a>
-                    <a href="#" class="footer-link">Privacy policy</a>
-                </div>
-            </div>
-            <!-- Newsletter Section -->
-            <div class="news tw-flex tw-h-full tw-w-[250px] tw-flex-col tw-gap-4 tw-items-center max-md:tw-w-full">
-                <h2 class="tw-text-3xl max-md:tw-text-xl tw-text-center">Newsletter</h2>
-                <p class="tw-text-center tw-text-sm">
-                Subscribe to our newsletter for updates.
-                </p>
-                <form class="tw-flex tw-flex-col tw-gap-2 tw-w-full" onsubmit="return false;">
-                <input type="email" placeholder="Your Email" 
-                        class="tw-w-full tw-py-2 tw-px-3 tw-rounded-md tw-border tw-border-gray-300 tw-text-black focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-blue-400" />
-                          <button type="submit" class="subscribe-btn">
-                            Subscribe
-                            <span class="dot dot1"></span>
-                            <span class="dot dot2"></span>
-                            <span class="dot dot3"></span>
-                            <span class="dot dot4"></span>
-                            <span class="dot dot5"></span>
-                            <span class="dot dot6"></span>
-                            <span class="dot dot7"></span>
-                            <span class="dot dot8"></span>
-                            <span class="dot dot9"></span>
-                            <span class="dot dot10"></span>
-                            <span class="dot dot11"></span>
-                            <span class="dot dot12"></span>
-                            <span class="dot dot13"></span>
-                            <span class="dot dot14"></span>
-                            <span class="dot dot15"></span>
-                            <span class="dot dot16"></span>
-                            <span class="dot dot17"></span>
-                            <span class="dot dot18"></span>
-                            <span class="dot dot19"></span>
-                            <span class="dot dot20"></span>
-                          </button>    
-                </form>
-            </div>
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
   
-        </footer>
+  .logo-icon {
+    width: 32px;
+    height: 32px;
+    background: #b91c1c;
+    border-radius: 0.75rem;
+  }
+  
+  .logo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 32px;
+    height: 32px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+  }
+  
+  .burger span {
+    width: 100%;
+    height: 3px;
+    background-color: #ffffff;  /* White */
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+  }  
+  
+  .burger.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  .burger.open span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .burger.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -6.5px);
+  }
+  
+  
+  .mobile-menu {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .mobile-menu.open {
+    display: flex;
+  }
+  
+  .mobile-menu-logo {
+    margin-top: 1rem;
+    border-top: 1px solid white;
+    padding-top: 1rem;
+  }
+  
+  .mobile-logo {
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  #mobileMenu {
+    /* background: linear-gradient(90deg,#ff000094 100%, white 0%, #ff0000ae 100%); */
+    background-color: #000000c7;
+    position: fixed;
+  }
+  #mobileMenu a:hover {
+    color: hsl(0, 100%, 60%);
+    background-color: transparent;
+  }
+  /* Responsive */
+  @media screen and (max-width: 768px) {
+    .nav,
+    .left-logo,
+    .right-logo {
+      display: none;
+    }
+  
+    .mobile-logo {
+      display: flex;
+    }
+  
+    .burger {
+      display: flex;
+    }
+  }
+
+a {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center horizontally */
+    flex-shrink: 0;
+}
+
+#logo-container {
+    box-sizing: border-box;
+}
+
+.download-btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 150px;
+    gap: 20px;
+    text-align: center;
+    color: red;
+}
+
+.download-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 10px; /* Adjust padding */
+    min-width: 120px; /* Ensures button doesn't shrink */
+    border-radius: 10px;
+    border: 1px solid white;
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.download-btn:hover {
+    background-color: rgba(206, 42, 42, 0.582);
+    color: rgb(255, 255, 255);
+}
+
+#hero-section {
+    display: flex;
+    align-items: center;
+    height: 400vh;
+    top: 0;
+    left: 0;
+}
+
+/* .fleet {
+    background-color: #df252517;
+    border-radius: 8vh;
+    border: rgb(197, 21, 21);
+    border-style:groove;
+    border-spacing: 10vh;
+} */
+
+.dis-bor {
+    border: rgb(197, 21, 21);
+    border-radius: 1vh;
+    border-style: groove;
+    border-spacing: -2vh;
+}
+
+.ad-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    /* margin-left: 4vh; */
+    /* background-color: #df2c2c40; */
+    background-color: #df252517;
+    border: rgb(197, 21, 21);
+    color: rgb(0, 0, 0);
+    border-radius: 8vh;
+    border-style: groove;
+    padding: 5vh;
+}
+
+.ad-text {
+    font-size: 70px;
+    line-height: 1.2;
+}
+
+.ad-text2 {
+    font-size: 30px;
+    line-height: 1.2;
+}
+
+/* Payment List */
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Space between items */
+    margin-top: 20px;
+}
+
+.payment-item {
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between icon and text */
+}
+
+/* Responsive Fix */
+@media (max-width: 600px) {
+  .ad-text {
+    font-size: 50px;
+  }
+  
+  .ad-text2 {
+    font-size: 25px;
+  }
+
+  .payment-item {
+    font-size: 20px;
+  }
+}
+
+
+.payment-icon {
+    margin-right: 0.5rem; /* Adds space between the icon and the text */
+    font-size: 1.2em;     /* Adjust the size if needed */
+  }
+  
+
+.logo-container {
+    height: 150px; /* Adjust height */
+    width: 170px;  /* Adjust width */
+}
+
+.logo-img {
+    max-width: 170px;
+    max-height: 90px;
+    object-fit: contain;
+}
+
+/* .phone {
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+} */
+
+.phone {
+    clip-path: inset(0 1.1rem round 52px);
+    margin-top: 10%;
+    height: auto; /* Allow dynamic height */
+    max-height: 90vh; /* Slightly reduce max height */
+    width: auto; /* Maintain aspect ratio */
+    max-width: 100%;
+    object-fit: cover; /* Prevent white gaps */
+    display: block;
+}
+
+
+.phone2 {
+    clip-path: inset(0.03rem 1.1rem round 40px);
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+    .phone {
+        clip-path: inset(0.03rem 0.8rem 0.3rem round 40px); /* Adjusted for smaller screens */
+        border-radius: 40px;
+    }
+
+    .phone2 {
+        clip-path: inset(0.02rem 0.7rem round 34px);
+        border-radius: 25px;
+        width: 100%;
+        height: auto;
+    }
+    .phone3 {
+        place-items: center;
+    }
+}
+
+@media (max-height: 900px) {
+    .phone {
+        clip-path: inset(0.03rem 0.9rem 0.1rem round 40px); /* Adjusted for smaller screens */
+        border-radius: 40px;
+    }
+
+    .phone2 {
+        clip-path: inset(0.02rem 0.7rem round 34px);
+        border-radius: 25px;
+        width: 100%;
+        height: auto;
+    }
+    .phone3 {
+        place-items: center;
+    }
+}
+
+a {
+    margin: 0 auto; /* Center the link */
+}
+@media not all and (min-resolution: 0.001dpcm) and (min-color-index: 0) {
+    a {
+        margin-left: 0 !important;
+        justify-content: center !important;
+    }
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 200vh; /* Adds enough space to scroll */
+}
+
+
+html {
+    scroll-behavior: smooth;
+    font-family: "Ubuntu", sans-serif;
+}
+
+
+#backchange {
+    /* background: linear-gradient(90deg, white 0%, #62ff007a 100%); */
+    /* background: linear-gradient(90deg, white 0%, #ff00007a 100%); */
+    background: linear-gradient(180deg,white 0%, #ff000070 0%, white 98%);
+    background-size: 200% 100%; /* Double width for animation */
+    background-position: 100% 0%; /* Start from right */
+    transition: background-position 0.3s ease;
+}
+#backchange2 {
+    /* background: linear-gradient(90deg, white 0%, #62ff007a 100%); */
+    /* background: linear-gradient(90deg, white 0%, #ff00007a 100%); */
+    background: linear-gradient(180deg, 
+    white 0%, 
+    /* white 7%,  */
+    #ff000015 13%, 
+    #ff000020 17%, 
+    #ff000025 30%, 
+    #ff000025 70%,
+    #ff000018 84%, 
+    /* white 90%,  */
+    white 100%
+);
+    background-size: 200% 100%; /* Double width for animation */
+    background-position: 100% 0%; /* Start from right */
+    transition: background-position 0.3s ease;
+}
+
+#hero-section{
+    /* background: linear-gradient(90deg,#ff000094 100%, white 0%, #ff0000ae 100%); */
+
+    background: linear-gradient(90deg,#ff000094 100%, white 0%, #ff0000ae 100%);
+    /* background-color: red; */
+    /* background: linear-gradient(90deg,#e64c4c 100%, white 0%, #e44e4eae 100%); */
+    background-size: 200% 100%; /* Double width for animation */
+    background-position: 100% 0%; /* Start from right */
+    transition: background-position 0.3s ease;
+    height: 75px;
+    
+}
+
+
+.header-links:hover {
+    color: hsl(0, 100%, 50%);
+    /* background-color: var(--header-link-hover); */
+}
+
+.primary-text-color{
+    color: var(--primary-text-color);
+}
+
+
+.signup-img-section{
+    background-image: url("../assets/images/home/darkbg.png");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+}
+
+.edge-gradient{
+    background: rgb(28, 28, 28);
+    background: linear-gradient(83deg, #ffffff 0%, #ffffff00 20%, #ffffff00 80%, rgb(255, 255, 255) 100%);
+}
+
+.scroller{
+    /* width: max-content;
+    flex-wrap: nowrap; */
+    animation: scroll 40s forwards linear infinite;
+  }
+  
+  .scroller[data-direction="right"] {
+      animation-direction: reverse;
+  }
+  
+  .scroller[data-direction="left"] {
+      animation-direction: forwards;
+  }
+  
+  .scroller[data-direction="left"] {
+      animation-direction: forwards;
+  }
+  
+  .scroller[data-speed="fast"]{
+      animation-duration: 30s;
+  }
+  
+  .scroller[data-speed="slow"]{
+      animation-duration: 80s;
+  }
+
+.opacity-0{
+    opacity: 0 !important;
+}
+
+.opacity-100{
+    opacity: 100 !important;
+}
+
+.btn{
+    padding: 10px 15px;
+    width: max-content;
+    border-radius: 5px;
+    color: var(--btn-color);
+    background-color: var(--btn-bg);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+}
+
+.btn:hover{
+
+}
+
+.btn:disabled{
+    cursor: default;
+}
+
+.input{
+    padding: 10px;
+    background-color: transparent;
+    border-radius: 5px;
+    /* outline: none; */
+    min-width: 100px;
+    border: 1px solid #818080;
+    /* transition: border 0.3s; */
+}
+
+.input:active, .input:focus, .input:focus-within{
+    border: 1px solid var(--input-hover-bd-color) !important;
+}
+
+.carousel-container {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    max-width: 800px;
+}
+  
+.carousel {
+    display: flex;
+    width: max-content; /* Ensure the carousel can extend indefinitely */
+    animation: scroll 30s linear infinite;
+}
+  
+.carousel-img {
+    display: inline-block;
+    margin: 0 20px;
+    text-decoration: dashed;
+    color: rgb(95, 94, 94);
+    padding-left: 3vh;
+    padding-right: 3vh;
+}
+  
+.carousel-wrapper {
+    overflow: hidden; /* Hide overflow to prevent duplicate display */
+    width: 100%;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+footer{
+    background-color: #000000;
+    color: #f2e7e7;
+}
+.footer-link{
+    color: #ffffff;
+    transition: color 0.3s;
+}
+
+.footer-link:hover{
+    color: #ff0000;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    z-index: 10;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0px;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Style for the collapsible content such as faq commonly known as: accordion */
+
+.faq{
+    background-color: #fff;
+    color: #000000;
+    border: 1px solid #000;
+}
+
+.faq-accordion {
+    background-color: inherit;
+    color: #000000;
+    cursor: pointer;
+    padding: 15px 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    transition: height 0.4s;
+}
+
+.faq .content {
+    padding: 0px 18px;
+    color: #232323;
+    height: max-content;
+    overflow: hidden;
+    background-color: transparent;
+    text-align: justify;
+    max-height: 0px;
+    transition: max-height 0.4s, padding 0.4s;
+}
+
+.faq-accordion .active,
+.faq-accordion:hover {
+    /* background-color: #2e2c2c; */
+}
+/* Style for the dialogue box */
+.dialog {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px); /* Adds a blur effect to the background */
+}
+
+.dialog-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    width: 350px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+    animation: slideIn 0.3s ease-out; /* Animation for opening the dialog */
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.2s ease;
+}
+
+.close:hover {
+    color: #000; /* Darker color on hover */
+}
+
+/* Button styling */
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    transform: scale(1.05); /* Slight scale effect on hover */
+}
+/* Article Card Hover Effect */
+.tw-cursor-pointer:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Article Dialog Box Styles */
+.article-dialog {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+}
+
+.article-dialog-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    width: 95%; /* Full width on mobile */
+    max-width: 800px; /* Wider on laptops */
+    max-height: 90vh; /* Maximum height for mobile devices */
+    overflow: hidden; /* Hide overflow for the container */
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    animation: slideIn 0.3s ease-out;
+}
+
+/* Scrollable Content */
+.article-dialog-scrollable {
+    max-height: calc(90vh - 60px); /* Adjust for padding and close button */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding-right: 10px; /* Add space for scrollbar */
+}
+
+/* Close Button */
+.article-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.2s ease;
+}
+
+.article-close:hover {
+    color: #000;
+}
+
+/* Animation */
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+    .article-dialog-content {
+        width: 100%; /* Full width on mobile */
+        height: 100vh; /* Full height on mobile */
+        max-height: 100vh; /* Full height on mobile */
+        border-radius: 0; /* Remove border radius for full-screen effect */
+    }
+
+    .article-dialog-scrollable {
+        max-height: calc(100vh - 60px); /* Adjust for smaller screens */
+    }
+}
+
+/* Laptop Optimization */
+@media (min-width: 769px) {
+    .article-dialog-content {
+        width: 60%; /* At least 60% of the screen on laptops */
+        max-width: 800px; /* Maximum width for larger screens */
+    }
+}
+/* Article Dialog Box Styles */
+.article-dialog {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Darker overlay */
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px); /* Stronger blur effect */
+}
+
+.article-dialog-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    width: 95%; /* Full width on mobile */
+    max-width: 800px; /* Wider on laptops */
+    max-height: 90vh; /* Maximum height for mobile devices */
+    overflow: hidden; /* Hide overflow for the container */
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+    animation: slideIn 0.4s ease-out;
+}
+
+/* Scrollable Content */
+.article-dialog-scrollable {
+    max-height: calc(90vh - 80px); /* Adjust for padding and close button */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding-right: 10px; /* Add space for scrollbar */
+}
+
+/* Close Button */
+.article-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.article-close:hover {
+    color: #000;
+    transform: scale(1.1); /* Slight scale effect on hover */
+}
+
+/* Title */
+.article-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Image */
+.article-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* Text */
+.article-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Animation */
+@keyframes slideIn {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+    .article-dialog-content {
+        width: 100%; /* Full width on mobile */
+        height: 100vh; /* Full height on mobile */
+        max-height: 100vh; /* Full height on mobile */
+        border-radius: 0; /* Remove border radius for full-screen effect */
+        padding: 20px;
+    }
+
+    .article-dialog-scrollable {
+        max-height: calc(100vh - 80px); /* Adjust for smaller screens */
+    }
+
+    .article-title {
+        font-size: 1.8rem;
+    }
+
+    .article-text {
+        font-size: 1rem;
+    }
+}
+
+/* Laptop Optimization */
+@media (min-width: 769px) {
+    .article-dialog-content {
+        width: 60%; /* At least 60% of the screen on laptops */
+        max-width: 800px; /* Maximum width for larger screens */
+    }
+}
+
+.arrow-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Rain Container */
+#rain-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Ash Style */
+.ash {
+    position: absolute;
+    background: rgba(255, 100, 50, 0.7); /* Stronger glow */
+    border-radius: 50%;
+    opacity: 0.6;
+    box-shadow: 0 0 14px 6px rgba(255, 100, 50, 0.5); /* More glow */
+    animation: flicker 2s infinite alternate;
+}
+
+/* Drift Left */
+.ash-left {
+    animation: driftLeft 15s linear forwards;
+}
+
+/* Drift Right */
+.ash-right {
+    animation: driftRight 15s linear forwards;
+}
+
+/* Floating & Fading Animation */
+@keyframes driftLeft {
+    0% {
+        transform: translateX(0) translateY(0);
+        opacity: 0.6;
+    }
+    25% {
+        transform: translateX(70px) translateY(-10px);
+        opacity: 0.7;
+    }
+    50% {
+        transform: translateX(140px) translateY(20px);
+        opacity: 0.5;
+    }
+    75% {
+        transform: translateX(210px) translateY(-10px);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateX(280px) translateY(20px);
+        opacity: 0;
+    }
+}
+
+@keyframes driftRight {
+    0% {
+        transform: translateX(0) translateY(0);
+        opacity: 0.6;
+    }
+    25% {
+        transform: translateX(-70px) translateY(10px);
+        opacity: 0.7;
+    }
+    50% {
+        transform: translateX(-140px) translateY(-20px);
+        opacity: 0.5;
+    }
+    75% {
+        transform: translateX(-210px) translateY(10px);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateX(-280px) translateY(-20px);
+        opacity: 0;
+    }
+}
+
+/* Flicker Effect */
+@keyframes flicker {
+    0% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0.9;
+    }
+}
+.payment-logos {
+    display: flex;
+
+    gap: 15px; /* Space between icons */
+    margin-top: 10px;
+}
+
+.payment-logos i {
+    font-size: 36px; /* Adjust icon size */
+    color: #333; /* Default color */
+}
+@media (max-width: 768px){
+    .payment-logos {
+        display: flex;
+        flex-wrap: wrap; /* Allows wrapping */
+        gap: 10px; /* Adds spacing between icons */
+        justify-content: center; /* Centers icons */
+        align-items: center;
+        max-width: 250px; /* Adjust as needed */
+        margin: auto;
+    }
+    
+    .payment-logos i {
+        font-size: 32px; /* Adjust icon size */
+        flex: 1 1 30%; /* Each icon takes 30% width, allowing wrapping */
+        text-align: center;
+    }
+}
+/* Hover effect */
+.payment-logos i:hover {
+    color: #ff2a00; /* Change color on hover */
+}
+
+.social-icons a:hover {
+    color: rgb(244, 70, 70); /* Change color to red on hover */
+}
+
+.driver {
+    border: 2px solid #000; /* Visible border with 2px thickness and black color */
+    border-radius: 10px; /* Rounded corners */
+    padding: 5px; /* Optional, adds space between the border and the image */
+    margin-right: 2vh;
+}
+
+.ques {
+    margin-top: 1vh;
+
+}
+
+.ques-con {
+    margin-left: 5vh;
+}
+
+.cont {
+    padding-bottom: 7%;
+    margin-top: 5vh;
+}
+
+.news {
+    background-color: #e02f2f;
+    padding: 2%;
+    border-radius: 5vh;
+    border-style: groove;
+    border-color: #fffbfb;
+}
+
+.subscribe-btn {
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    margin: 1rem auto;
+    background: linear-gradient(to right, #fca5a5, #f87171);
+    color: #fff;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 0.75rem 1.25rem;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+    text-align: center;
+    touch-action: manipulation;
+}
+  
+.subscribe-btn:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+  
+.subscribe-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(248, 113, 113, 0.5);
+}
+
+.dot {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background-color: rgba(255, 200, 220, 0.8);
+    border-radius: 50%;
+    animation-name: moveRight;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    pointer-events: none;
+    filter: blur(0.1px);
+}
+  
+@keyframes moveRight {
+    0% {
+        left: -5%;
+        opacity: 0;
+        box-shadow: none;
+        transform: scale(1);
+    }
+    10% {
+        opacity: 1;
+        box-shadow:
+        0 0 4px rgba(255, 255, 255, 0.8),
+        0 0 8px rgba(255, 255, 255, 0.8),
+        0 0 12px rgba(255, 255, 255, 0.9);
+    }
+    45%, 55% {
+        box-shadow:
+        0 0 4px rgba(255, 255, 255, 0.8),
+        0 0 8px rgba(255, 255, 255, 0.8),
+        0 0 12px rgba(255, 255, 255, 0.9);
+        transform: scale(1.3);
+    }
+    90% {
+        opacity: 1;
+        box-shadow:
+        0 0 4px rgba(255, 255, 255, 0.8),
+        0 0 8px rgba(255, 255, 255, 0.8),
+        0 0 12px rgba(255, 255, 255, 0.9);
+    }
+    100% {
+        left: 105%;
+        opacity: 0;
+        box-shadow: none;
+        transform: scale(1);
+    }
+}
+  
+/* Dots spaced vertically with mobile-safe ranges */
+.dot1  { top: 5%; animation-delay: 0.1s; animation-duration: 2.4s; }
+.dot2  { top: 10%; animation-delay: 0.6s; animation-duration: 3.1s; }
+.dot3  { top: 15%; animation-delay: 0.3s; animation-duration: 2.7s; }
+.dot4  { top: 20%; animation-delay: 1.2s; animation-duration: 3.4s; }
+.dot5  { top: 25%; animation-delay: 0.8s; animation-duration: 2.5s; }
+.dot6  { top: 30%; animation-delay: 0.2s; animation-duration: 2.9s; }
+.dot7  { top: 35%; animation-delay: 1.0s; animation-duration: 3.2s; }
+.dot8  { top: 40%; animation-delay: 0.5s; animation-duration: 2.6s; }
+.dot9  { top: 45%; animation-delay: 1.1s; animation-duration: 3.0s; }
+.dot10 { top: 50%; animation-delay: 0.9s; animation-duration: 2.8s; }
+.dot11 { top: 55%; animation-delay: 0.4s; animation-duration: 3.3s; }
+.dot12 { top: 60%; animation-delay: 0.7s; animation-duration: 2.3s; }
+.dot13 { top: 65%; animation-delay: 0.2s; animation-duration: 3.6s; }
+.dot14 { top: 70%; animation-delay: 1.3s; animation-duration: 2.8s; }
+.dot15 { top: 75%; animation-delay: 1.0s; animation-duration: 2.4s; }
+.dot16 { top: 80%; animation-delay: 0.1s; animation-duration: 3.1s; }
+.dot17 { top: 85%; animation-delay: 0.3s; animation-duration: 2.6s; }
+.dot18 { top: 90%; animation-delay: 0.5s; animation-duration: 3.2s; }
+.dot19 { top: 95%; animation-delay: 1.1s; animation-duration: 2.7s; }
+.dot20 { top: 98%; animation-delay: 0.6s; animation-duration: 3.0s; }
+  
+/* 💡 Responsive adjustments */
+@media (max-width: 480px) {
+    .subscribe-btn {
+        font-size: 0.95rem;
+        padding: 0.65rem 1rem;
+        border-radius: 10px;
+    }
+
+    .dot {
+        width: 1.5px;
+        height: 1.5px;
         
-        
-    </body>
+    }
+}
 
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"
-        integrity="sha512-B1lby8cGcAUU3GR+Fd809/ZxgHbfwJMp0jLTVfHiArTuUt++VqSlJpaJvhNtRf3NERaxDNmmxkdx2o+aHd4bvw=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"
-    ></script>
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/ScrollTrigger.min.js"
-        integrity="sha512-AY2+JxnBETJ0wcXnLPCcZJIJx0eimyhz3OJ55k2Jx4RtYC+XdIi2VtJQ+tP3BaTst4otlGG1TtPJ9fKrAUnRdQ=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"
-    ></script>
+.read {
+    min-height: 70vh;
+}
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js" integrity="sha512-Ysw1DcK1P+uYLqprEAzNQJP+J4hTx4t/3X2nbVwszao8wD+9afLjBQYjz7Uk4ADP+Er++mJoScI42ueGtQOzEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css" integrity="sha512-rd0qOHVMOcez6pLWPVFIv7EfSdGKLt+eafXh4RO/12Fgr41hDQxfGvoi1Vy55QIVcQEujUE1LQrATCLl2Fs+ag==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+.faqq {
+    margin-top: 1vh;
+}
 
-
-    <script src="./index.js"></script>
-</html>
+@media (max-width: 1290px) {
+    .faqq {
+        margin-top: 5vh;
+    }
+}
