@@ -42,8 +42,6 @@
     <body
         class="tw-flex tw-min-h-[100vh] tw-flex-col tw-bg-white tw-text-black"
     >
-        
-        
         <section
             class="hero-section tw-mt-1 tw-relative tw-flex tw-min-h-[100vh] tw-w-full tw-max-w-[100vw] tw-flex-col tw-overflow-hidden "
             id="backchange"
@@ -239,13 +237,32 @@
         </section>
 
         <section class="make-white tw-w-full tw-flex tw-flex-col tw-items-center tw-px-[3%] tw-p-4 tw-gap-[10%] max-md:tw-flex-col tw-overflow-hidden tw-min-h-[30vh]" id="book">
-            <h2 class="tw-text-3xl max-md:tw-text-2xl tw-mt-7">
-                Plan your next destination
-            </h2>
-        
-            <h2 class="tw-text-3xl max-md:tw-text-2xl tw-mt-7">
-                With Us!
-            </h2>
+            
+            <!-- Make sure Font Awesome is loaded -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+            <!-- Custom Animation -->
+            <style>
+              @keyframes drive {
+                0%, 100% {
+                  transform: translateX(0);
+                }
+                50% {
+                  transform: translateX(15px);
+                }
+              }
+            
+              .tw-animate-drive {
+                animation: drive 2s ease-in-out infinite;
+              }
+            </style>
+            
+            <!-- Heading with Car Icon -->
+            <div class="tw-flex tw-items-center tw-gap-4 tw-mt-7">
+              <h2 class="tw-text-3xl max-md:tw-text-2xl">Plan Your Next Destination</h2>
+              <i class="fas fa-car tw-text-4xl tw-text-orange-500 tw-animate-drive"></i>
+            </div>
+            <h2 class="tw-text-3xl max-md:tw-text-2xl tw-mt-5">With Us!</h2>
             
             <div class="tw-flex tw-items-center tw-gap-6 max-md:tw-flex-col max-md:tw-gap-4 tw-mt-8 tw-w-full">
                 <!-- Slideshow container: shifted left with fixed size -->
@@ -566,7 +583,6 @@
                     </span>
                 </div>
             </div>
-            <!-- Article Dialogues -->
             <!-- Dialogue for Article 1 -->
             <div id="dialog1" class="article-dialog">
                 <div class="article-dialog-content">
@@ -627,13 +643,51 @@
         </section>
 
         <section
-            class="tw-flex tw-w-full tw-flex-col tw-place-content-center tw-place-items-center tw-gap-[10%] tw-p-[5%] tw-px-[10%]"
+            class="tw-flex tw-w-full tw-flex-col tw-place-content-center tw-place-items-center tw-gap-[10%] tw-px-[10%]"
         >
-            <h3
-                class="tw-text-4xl tw-font-medium tw-text-gray-800 max-md:tw-text-2xl"
-            >
-                Faq
+        <style>
+            @keyframes shake-question {
+              0%, 100% { transform: translateX(0); }
+              25% { transform: translateX(-1px); }
+              50% { transform: translateX(2px); }
+              75% { transform: translateX(-1px); }
+            }
+          
+            .tw-question-stack {
+              position: relative;
+              width: 40px;
+              height: 40px;
+              margin-left: 8px;
+            }
+          
+            .tw-question-stack i {
+              position: absolute;
+              color: #000;
+              animation: shake-question 1.2s ease-in-out infinite;
+              opacity: 0.9;
+            }
+          
+            .q1 { top: 0; left: 0; font-size: 1.5rem; transform: rotate(-10deg); }
+            .q2 { top: 5px; left: 10px; font-size: 1.25rem; transform: rotate(12deg); }
+            .q3 { top: 2px; left: -10px; font-size: 1.75rem; transform: rotate(4deg); }
+          </style>
+          
+          <!-- Visually centered block -->
+          <div class="ques-con tw-flex tw-justify-center tw-items-center tw-gap-2 tw-mb-6">
+            <h3 class="tw-text-4xl tw-font-medium tw-text-gray-800 max-md:tw-text-2xl">
+              FAQ
             </h3>
+          
+            <!-- Cluster of wiggling question marks, stays next to heading -->
+            <div class="ques tw-question-stack">
+              <i class="fas fa-question q1"></i>
+              <i class="fas fa-question q2"></i>
+              <i class="fas fa-question q3"></i>
+            </div>
+          </div>
+          
+
+
             <div
                 class="tw-mt-5 tw-flex tw-min-h-[300px] tw-w-full tw-max-w-[850px] tw-flex-col tw-gap-4"
             >
@@ -701,7 +755,7 @@
                     </div>
                 </div>
             </div>
-            <div class="tw-mt-20 tw-flex tw-flex-col tw-place-items-center tw-gap-4">
+            <div class="cont tw-flex tw-flex-col tw-place-items-center tw-gap-4">
                 <div class="tw-text-3xl max-md:tw-text-2xl">
                     Still have questions?
                 </div>
@@ -721,73 +775,22 @@
             </div>
         </section>
 
-        <section
-            class="tw-flex tw-w-full tw-flex-col tw-place-content-center tw-place-items-center tw-gap-[10%] tw-p-[5%] tw-px-[10%] max-md:tw-px-2"
-        >
-
-            <div class="tw-bg-gray-100 tw-border-[1px] tw-border-black tw-h-[550px] tw-flex max-lg:tw-flex-col tw-max-h-[550px] tw-max-w-[80%]  max-lg:tw-max-h-fit max-lg:tw-h-full max-lg:tw-max-w-full tw-overflow-hidden tw-rounded-xl tw-w-full">
-                <!-- <img src="./assets/images/home/darkbg.png" alt="background" 
-                     class="tw-w-full tw-h-full"> -->
-
-                <!-- <div class="tw-flex tw-w-full tw-h-full max-lg:tw-place-items-center max-lg:tw-flex-col tw-place-content-center  tw-overflow-hidden"> -->
-                    
-                    <div
-                        class="tw-flex tw-flex-col tw-h-full tw-place-content-center tw-gap-3  tw-p-6 max-md:tw-max-w-full"
-                        >
-                        <div class="tw-flex tw-flex-col tw-gap-1">
-                            <h2 class="tw-text-3xl tw-text-black max-md:tw-text-xl">
-                                Sign-Up To
-                            </h2>
-                            <h2 class="tw-text-3xl tw-text-black max-md:tw-text-xl">
-                                 Our Newsletter
-                            </h2>
-                            <div class="tw-text-gray-800">Subscribe With Tiyeni Today!</div>
-                        </div>
-
-                        <div
-                            class="tw-flex tw-h-[60px] tw-place-items-center tw-gap-2 tw-py-2 tw-overflow-hidden"
-                        >
-                            <input
-                                type="email"
-                                class="input tw-h-full tw-w-full !tw-border-gray-600 tw-p-2 tw-outline-none"
-                                placeholder="email"
-                            />
-                            <a
-                                class="btn !tw-rounded-full !tw-text-gray-800 !tw-border-[1px] !tw-border-solid !tw-border-gray-800 !tw-bg-transparent tw-transition-colors tw-duration-[0.3s]"
-                                href=""
-                            >
-                                <i class="bi bi-chevron-right"></i>
-                            </a>
-                        </div>
-                    </div>
-            
-                    <div class="tw-max-w-[60%] tw-w-full tw-h-full tw-flex max-lg:tw-max-w-full tw-place-content-end tw-place-items-center">
-                        <img src="./assets/images/home/phone2.png" alt="phone"
-                            class="phone3 tw-h-full tw-max-h-[90%] tw-object-contain">
-                    </div>
-
-                <!-- </div> -->
-
-                
-            </div>
-        </section>
+        
         <footer class="tw-mt-auto tw-flex tw-w-full tw-place-content-around tw-gap-3 tw-p-[5%] tw-px-[10%] tw-text-white max-md:tw-flex-col tw-items-center">
             <!-- Logo and Address Section -->
-            
             <div class="tw-flex tw-h-full tw-w-[250px] tw-flex-col tw-place-items-center tw-gap-6 max-md:tw-w-full">
                 <img src="Tiyeni/logo_transparent.png" alt="logo" class="tw-max-w-[120px]" />
                 <div class="tw-text-center">
                     Area 47,<br />
                     Lilongwe,<br />
                     Malawi<br /><br>
-                    
                     <a href="https://www.google.com/maps/place/Area+47,+Lilongwe,+Malawi/" 
                        target="_blank" 
                        rel="noopener noreferrer" 
                        class="tw-text-blue-600 hover:tw-text-blue-800 tw-inline-flex tw-items-center"
                        style="display: inline-flex; align-items: center; gap: 6px; border-bottom: 1.5px solid currentColor;">
-                        Open on Map 
-                        <i class="fas fa-map-marker-alt"></i> <!-- Font Awesome Icon -->
+                        Show on Map 
+                        <i class="fas fa-map-marker-alt"></i>
                     </a>
                 </div>                                                       
                 <div class="tw-mt-1 tw-text-lg tw-font-semibold">Follow us</div>
@@ -798,21 +801,18 @@
                        aria-label="Facebook">
                         <i class="bi bi-facebook"></i>
                     </a>
-                    
                     <a href="https://www.linkedin.com/company/tiyeni-corp/" 
                        target="_blank" 
                        rel="noopener noreferrer" 
                        aria-label="LinkedIn">
                         <i class="fa-brands fa-linkedin-in"></i>
                     </a>
-                    
                     <a href="https://instagram.com/" 
                        target="_blank" 
                        rel="noopener noreferrer" 
                        aria-label="Twitter">
                         <i class="bi bi-twitter-x"></i>
                     </a>              
-                    
                     <a href="https://www.instagram.com/tiyeni.mw/" 
                        target="_blank" 
                        rel="noopener noreferrer" 
@@ -820,7 +820,6 @@
                         <i class="bi bi-instagram"></i>
                     </a>
                 </div>                
-                
             </div>
         
             <!-- Company Section -->
@@ -846,7 +845,44 @@
                     <a href="#" class="footer-link">Privacy policy</a>
                 </div>
             </div>
+            <!-- Newsletter Section -->
+            <div class="news tw-flex tw-h-full tw-w-[250px] tw-flex-col tw-gap-4 tw-items-center max-md:tw-w-full">
+                <h2 class="tw-text-3xl max-md:tw-text-xl tw-text-center">Newsletter</h2>
+                <p class="tw-text-center tw-text-sm">
+                Subscribe to our newsletter for updates.
+                </p>
+                <form class="tw-flex tw-flex-col tw-gap-2 tw-w-full">
+                <input type="email" placeholder="Your Email" 
+                        class="tw-w-full tw-py-2 tw-px-3 tw-rounded-md tw-border tw-border-gray-300 tw-text-black focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-blue-400" />
+                          <button type="submit" class="subscribe-btn">
+                            Subscribe
+                            <span class="dot dot1"></span>
+                            <span class="dot dot2"></span>
+                            <span class="dot dot3"></span>
+                            <span class="dot dot4"></span>
+                            <span class="dot dot5"></span>
+                            <span class="dot dot6"></span>
+                            <span class="dot dot7"></span>
+                            <span class="dot dot8"></span>
+                            <span class="dot dot9"></span>
+                            <span class="dot dot10"></span>
+                            <span class="dot dot11"></span>
+                            <span class="dot dot12"></span>
+                            <span class="dot dot13"></span>
+                            <span class="dot dot14"></span>
+                            <span class="dot dot15"></span>
+                            <span class="dot dot16"></span>
+                            <span class="dot dot17"></span>
+                            <span class="dot dot18"></span>
+                            <span class="dot dot19"></span>
+                            <span class="dot dot20"></span>
+                          </button>
+                          
+                </form>
+            </div>
+  
         </footer>
+        
         
     </body>
 
