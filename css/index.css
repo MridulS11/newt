@@ -1113,7 +1113,6 @@ svg {
     .dot {
       width: 1.5px;
       height: 1.5px;
-      filter: blur(0.6px);
     }
   }
   
